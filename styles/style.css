@@ -1,5 +1,274 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  color: var(--text-main);
+  font-family: var(--page-font-family);
+  font-size: 18px;
+  line-height: 1.4625rem;
+}
+
+/*header*/
+
+.header {
+  display:grid;
+  grid-template-rows: 1fr auto 1fr;
+  height: 100vh;
+  min-block-size: 100vh;
+  max-inline-size: 1024px;
+  position: relative;
+}
+
+.decorated-zone::after {
+  position: absolute;
+  content: "";
+  top: 20px;
+  right: 20px;
+  inline-size: 25px;
+  block-size: 25px;
+  background-color: transparent;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  inline-size: 25px;
+  block-size: 25px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+.rec-decor {
+  position: absolute;
+  z-index: -1;
+  visibility: visible;
+  right: 30px;
+  top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rec-decor::before {
+  content: "REC";
+  color: var(--accent-color);
+}
+
+.rec-decor::after {
+  content: "";
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--accent-color);
+  background: var(--accent-color);
+  width: 9px;
+  height: 9px;
+}
+
+.header__theme-menu {
+  justify-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 23px;
+  margin: 17px 40px 20px 0;
+  padding-bottom: 13px;
+}
+
+.header__theme-menu-item {
+  list-style-type: none;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--btn-color);
+  font-family: var(--page-font-famil);
+  text-transform: lowercase;
+  cursor: pointer;
+  font-size: 18px;
+  outline: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--btn-color);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: inherit;
+}
+
+.header__theme-menu-button_type_light {
+  
+}
+.header__theme-menu-button_active {
+  outline: 1px solid currentColor;
+  pointer-events: none;
+}
+
+.header__theme-menu-button_type_auto {
+
+}
+
+.header__theme-menu-button_type_dark {
+
+}
+
+.page__title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 100%;
+  margin: 0;
+}
+
+.header__title {
+  inline-size: 50%;
+  align-self: center;
+  justify-self: end;
+  justify-content: flex-start;
+  max-width: 491px;
+  
+}
+
+.title-decor {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: 700;
+  font-size: 18px;  
+  
+}
+
+/*main*/
+
+.main__content {
+  display: grid;
+  max-inline-size: 1024px;
+}
+
+.main-title {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4625rem;
+  padding: 0 20px;
+}
+
+/*section_1*/
+
+.section__content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  margin-block-end: 80px;
+  padding: 0 20px;
+}
+
+/*section_2*/
+
+.section__card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+/*section_3*/
+
+.section__list {
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+/*section_4*/
+
+.section__picture {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-block-size: 100vh;
+  max-inline-size: 1024px;
+  gap: 20px;
+}
+
+.section__picture-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  grid-template-areas:
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
+}
+
+.sunset {
+  grid-area: sunset;
+}
+
+.ice-cream {
+  grid-area: ice-cream;
+}
+
+.tape {
+  grid-area: tape;
+}
+
+.books {
+  grid-area: books;
+}
+
+.street {
+  grid-area: street;
+}
+
+.section__picture-item {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/*footer*/
+
+.footer {
+  display:grid;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: center;
+  min-block-size: 100vh;
+  max-inline-size: 1024px;
+  position: relative;
+  @media (width <=1023px) {
+    min-height: 980px;
+  }
+}
+
+@media (width <=768px) {
+  .header__theme-menu-list {
+  flex-direction: column;
+  justify-content: end;
+  }
 }

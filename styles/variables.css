@@ -5,13 +5,14 @@
 
 :root {
   --accent-color: #ff0070;
-  --bg-color: #000028;
-  --bg-image: url(../images/cover-image-dark.png);
-  --title-color: #db00ff;
-  --title-shadow-color: #ff0070;
-  --text-main-color: #000028;
-  --text-content-color: #f1b2ce;
-  --text-link-shadow-color: #ff8dcd;
+  --page-bg-color: #000028;
+  --page-bg-image: url(../images/cover-image-dark.png);
+  --header-title-color: #db00ff;
+  --header-title-shadow: #ff0070;
+  --title-page-color: #000028;
+  --title-page-bg: #ff0070;
+  --paragraph-page-color: #ff0070;
+  --text-page-color: #f1b2ce;
   --page-font-family: 'IBM Plex mono', monospace;
   --btn-color: #ff0070;
   --btn-hover-color: rgb(255, 0, 112, 0.5);

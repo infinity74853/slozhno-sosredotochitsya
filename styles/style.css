@@ -3,8 +3,8 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-color: var(--bg-color);
-  background-image: var(--bg-image);
+  background-color: var(--page-bg-color);
+  background-image: var(--page-bg-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -13,7 +13,7 @@
   position: relative;
   display: grid;
   justify-content: center;
-  color: var(--text-main);
+  color: var(--text-page-color);
   font-family: var(--page-font-family);
   font-size: 18px;
   line-height: 1.4625rem;
@@ -81,14 +81,15 @@
 }
 
 .header__theme-menu {
-  justify-self: center;
+  margin: 20px;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: row;
-  gap: 16px;
-  margin-block-start: 16px;
+  justify-content: center;
+  column-gap: 20px;
+  
 }
 
 .header__theme-menu-item {
@@ -130,7 +131,7 @@
 .page__title {
   font-size: var(--header-title-font-size);
   font-weight: 700;
-  color: var(--title-color);
+  color: var(--header-title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   line-height: var(--header-title-line-height);
   margin: 0;
@@ -144,8 +145,8 @@
 }
 
 .title-decor {
-  background: var(--accent-color);
-  color: var(--bg-color);
+  background: var(--page-title-bg);
+  color: var(--page-title-color);
   font-weight: 700;
   font-size: 18px;
 }
@@ -162,7 +163,7 @@
 }
 
 .main-title {
-  color: var(--accent-color);
+  color: var(--paragraph-page-color);
   font-weight: 700;
   font-size: 18px;
   max-width: 315px;
@@ -172,7 +173,7 @@
 
 .main-text {
   padding: 10px 0 20px;
-  color: var(--text-content-color);
+  color: var(--text-page-color);
 
 }
 
@@ -182,7 +183,7 @@
 }
 
 .link:hover {
-  border-block-end: 1px solid var(--text-color);
+  border-block-end: 1px solid var(--text-page-color);
 }
 
 .link:focus {
@@ -213,7 +214,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   list-style-type: none;
-  min-width: 135px;
 }
 
 /*section_3*/
@@ -224,20 +224,11 @@
 
 /*section_4*/
 
-.pic {
+.section__picture {
   margin: 30px 20px;
 }
 
-.section__picture {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  min-block-size: 100vh;
-  max-inline-size: 1024px;
-  gap: 20px;
-}
-
-.section__picture-container {
+.picture-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, auto);
@@ -292,18 +283,57 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-@media (max-width: 767px) {
+@media (width <667px) {
   :root {
-    --mobile: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-    --header-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    --header-title-line-height: clamp(5.9375rem, 5.699rem + 1.0178vw, 6.1875rem);
+    --header-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);    
+  }
+
+  .header__title {
+    align-self: center;
+    justify-self: end;
+    max-width: 335px;
+    margin: 0 20px 34px;
+  }
+
+  .picture-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (width <1024px) {
+  :root {
+    --header-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);    
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    justify-self: end;
+    column-gap: 15px;
+    margin-block-start: 60px;
+  }
+
+  .header__title {
+    align-self: center;
+    justify-self: end;
+    max-width: 364px;
+    margin: 0 20px 34px;
+  }
+
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    justify-content: end;
   }
 
   .section__content {
     display: flex;
     flex-direction: column;
   }
-
+      
   .section__card {
     display: grid;
     align-content: stretch;
@@ -314,16 +344,5 @@
     grid-template-columns: 1fr;
     align-content: stretch;
     list-style-type: none;
-  }
-
-  .section__picture-container {
-    display: flex;
-    flex-direction: column;
-}
-
-@media (max-width: 1023px) {
-  :root {
-    --header-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --header-title-line-height: clamp(6.1875rem, 0.375rem + 12.1094vw, 8.125rem);
   }
 }

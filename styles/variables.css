@@ -9,8 +9,8 @@
   --page-bg-image: url(../images/cover-image-dark.png);
   --header-title-color: #db00ff;
   --header-title-shadow: #ff0070;
-  --title-page-color: #000028;
-  --title-page-bg: #ff0070;
+  --page-title-color: #000028;
+  --page-title-bg: #ff0070;
   --paragraph-page-color: #ff0070;
   --text-page-color: #f1b2ce;
   --page-font-family: 'IBM Plex mono', monospace;
@@ -18,5 +18,4 @@
   --btn-hover-color: rgb(255, 0, 112, 0.5);
   --header-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --header-title-line-height: 100%;
-  --mobile: ;
 }

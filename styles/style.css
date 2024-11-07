@@ -287,7 +287,7 @@
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--header-title-shadow);
 }
 
 /* Для планшета и десктопа */
@@ -304,6 +304,7 @@
   .page__title {
     line-height: var(--header-title-line-height);
     font-size: var(--page-title-font-size);
+    text-shadow: 4px 4px 0 var(--accent-color);
   }
 
   .header__theme-menu {

@@ -15,7 +15,13 @@
   --text-page-color: #f1b2ce;
   --page-font-family: 'IBM Plex mono', monospace;
   --btn-color: #ff0070;
+  --decorated-color: #ff0070;
   --btn-hover-color: rgb(255, 0, 112, 0.5);
-  --header-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  --header-title-line-height: 100%;
+
+/* Для планшета и десктопа */
+  --page-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --header-title-line-height: clamp(6.1875rem, 0.375rem + 12.1094vw, 8.125rem);
+
+/* Для мобильных */
+  --page-title-font-size-mobile: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }

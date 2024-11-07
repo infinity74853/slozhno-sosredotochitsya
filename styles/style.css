@@ -345,6 +345,7 @@
 
   .footer__title {
     margin-block-start: 1px;
+    text-shadow: 2px 2px 0 var(--accent-color);
   }
 }
 

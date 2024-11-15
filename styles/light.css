@@ -37,7 +37,7 @@
     --btn-hover-color: rgb(50, 49, 45, 0.5);
   } /* Дублируем переменные светлой темы */
 
-  .rec-decor {
+  .theme_auto .rec-decor {
     display: none;
   }
 }
